@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Facts Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #FF4B4B, #B20000); /* Red and dark red gradient */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-image: url('https://wallpaperaccess.com/full/1341118.jpg'); /* Replace with a Spider-Man web pattern background */
+            background-size: cover; 
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #FFD700; /* Gold color for the title */
+        }
+
+        #factDisplay {
+            font-size: 1.5em;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1); 
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #000080; /* Blue button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+        }
+
+        button:hover {
+            background-color: #0000C0; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Amazing Facts Generator</h1>
+        <p id="factDisplay">Click the button to see a fun fact!</p>
+        <button onclick="getNewFact()">New Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "A group of owls is called a parliament.",
+            "Slugs have four noses.",
+            // ... [Add your 50+ facts here]
+        ];
+
+        const factDisplay = document.getElementById("factDisplay");
+
+        function getNewFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        }
+    </script>
+</body>
+</html>
